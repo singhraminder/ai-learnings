@@ -6,6 +6,7 @@ References:
 * Ollama Tutorial: Running LLMs Locally Made Super Simple - [https://www.kdnuggets.com/ollama-tutorial-running-llms-locally-made-super-simple](https://www.kdnuggets.com/ollama-tutorial-running-llms-locally-made-super-simple)
 * 10 points for running-models-with-ollama-step-by-step [running-models-with-ollama-step-by-step](https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807#:~:text=1.%20What%20is%20Ollama?%20Ollama%20is%20an%20open-souce%20code,%20ready-to-use)
 * Custom-llm-models-with-ollama-modelfile [https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile](https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile)
+* How to run Ollama on Windows [https://medium.com/@researchgraph/how-to-run-ollama-on-windows-8a1622525ada#:~:text=What%20to%20Expect.%20This%20article%20will%20guide%20you%20through%20the](https://medium.com/@researchgraph/how-to-run-ollama-on-windows-8a1622525ada#:~:text=What%20to%20Expect.%20This%20article%20will%20guide%20you%20through%20the)
 
 Pre-requisitie or important points to understand:
 * To check-in the new changes to code repo, your IDE must be linked to github account > like Visual Code git must be signed-in or uses Personal Access Token to commit changes. 
