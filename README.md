@@ -11,7 +11,8 @@ Pre-requisitie or important points to understand:
 * To check-in the new changes to code repo, your IDE must be linked to github account > like Visual Code git must be signed-in or uses Personal Access Token to commit changes. 
 * Check various model available and relative RAM needed on your machine - [https://github.com/ollama/ollama?tab=readme-ov-file#model-library](https://github.com/ollama/ollama?tab=readme-ov-file#model-library)
 > [NOTE] - You should have at least 8 GB of RAM available to run the 7B models, 16 GB to run the 13B models and 32 GB to run the 33B models.
-
+* Check individual model page for more details before using. Like here is page for Gemma2 model which has 3 variants - 2B, 9B (default) and 27B
+More details at - [https://ollama.com/library/gemma2:2b](https://ollama.com/library/gemma2:2b)
 
 Step 1: Download Ollama to Get Started
 > * Access [https://ollama.com/download/OllamaSetup.exe](https://ollama.com/download/OllamaSetup.exe) (version 0.3.12 as in Oct,2024 & it's 663MB) from [https://ollama.com/download](https://ollama.com/download)
