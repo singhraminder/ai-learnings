@@ -145,6 +145,7 @@ C:\work.0\ollama-setup>
 ```
 Step 3: Manual download a model and configure to run
 
+* https://www.kdnuggets.com/ollama-tutorial-running-llms-locally-made-super-simple
 * Custom-llm-models-with-ollama-modelfile [https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile](https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile)
 * Refer This article : [https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807](https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807) > section 7. Integrating models from other sources
 
@@ -152,6 +153,26 @@ Step 3: Manual download a model and configure to run
 * Create a modelfile with customization params for model like temprature and sys/user prompt
 
 Step 4: Customize the Models
+You can customize LLMs by setting system prompts for a specific desired behavior like so:
+
+* Set system prompt for desired behavior.
+* Save the model by giving it a name.
+* Exit the REPL and run the model you just created.
+Say you want the model to always explain concepts or answer questions in plain English with minimal technical jargon as possible. Here’s how you can go about doing it:
+
+```
+>>> /set system For all questions asked answer in plain English avoiding technical jargon as much as possible
+Set system message.
+>>> /save ipe
+Created new model 'ipe'
+>>> /bye
+```
+
+Now run the model you just created:
+
+```
+ollama run ipe
+```
 
 ** Integrate with different frameworks
 > Ollama running in background is accessible as any regular REST API. Therefore it is easy to integrate it withing an application using libraries like requests, or a bit more developed frameworks like FastAPI, Flask or Django.
@@ -166,12 +187,29 @@ pip install ollama
 //Generating embedding directly from Python code
 import ollama
 embedding = ollama.embeddings(model="llama2:7b", prompt="Hello Ollama!")
+print(response['response'])
 
-//hit via CURL to get api-response 
+//hit via CURL to get api-response  (non-streaming i.e. not interactive)
 curl http://localhost:11434/api/embeddings -d '{
   "model": "llama2:7b",
-  "prompt": "Here is an article about llamas..."
+  "prompt": "Here is an article about llamas...",
+  "stream": false
 }'
+
+//Response:
+{ 
+ "model":"llama2", 
+ "created_at":"2024-02-14T13:48:17.751003Z", 
+ "response": "nThe sky appears blue because of a phenomenon called Rayleigh.." 
+ "done":true, 
+ "context":[518,25580,29962,..], 
+ "total_duration":347735712609, 
+ "load_duration":6372308, 
+ "prompt_eval_duration":6193512000, 
+ "eval_count":368, 
+ "eval_duration":341521220000 
+}
+
 
 //hit as chat interface
 curl http://localhost:11434/api/chat -d '{
@@ -180,20 +218,47 @@ curl http://localhost:11434/api/chat -d '{
     { "role": "user", "content": "why is the sky blue?" }
   ]
 }'
+
+
+//C# as nuget package >>> https://github.com/awaescher/OllamaSharp
+using OllamaSharp; 
+ 
+var uri = new Uri("http://localhost:11434"); 
+var ollama = new OllamaApiClient(uri); 
+ 
+// select a model which should be used for further operations ollama.
+SelectedModel = "llama2"; 
+ConversationContext context = null; 
+context = await ollama.StreamCompletion( 
+ "How are you today?", 
+ context, stream => Console.Write(stream.Response)
+);
+
+//or
+string question = "I have the following ingredients in my fridge: aubergine, milk, cheese, peppers. 
+What food could I cook with this and other basic ingredients?"; 
+context = await ollama.StreamCompletion(
+ question, 
+ context, stream => Console.Write(stream.Response)
+);
 ```
 
 Step 6: Run Ollama with LangChain
 
-> Ollama has been seamlessly integrated into the Langchain framework, streamlining our coding efforts and making our work on the technical side even more straightforward:
-
-➡️ https://python.langchain.com/docs/integrations/llms/ollama
+> Ollama has been seamlessly integrated into the Langchain framework, streamlining our coding efforts and making our work on the technical side even more straightforward: ➡️ https://python.langchain.com/docs/integrations/llms/ollama
 
 ```
 # pip install langchain_community
-from langchain_community.embeddings import OllamaEmbeddings
+# pip install langchain
 
+from langchain_community.embeddings import OllamaEmbeddings
 embed = OllamaEmbeddings(model="llama2:7b")
 embedding = embed.embed_query("Hello Ollama!")
+
+//2nd approach
+from langchain_community.llms import Ollama
+llm = Ollama(model="llama2")
+llm.invoke("tell me about partial functions in python")
 ```
 
 Step 7: run Ollama with Springboot
