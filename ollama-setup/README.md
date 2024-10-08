@@ -168,10 +168,18 @@ pip install ollama
 import ollama
 embedding = ollama.embeddings(model="llama2:7b", prompt="Hello Ollama!")
 
-//hit via CURL
+//hit via CURL to get api-response 
 curl http://localhost:11434/api/embeddings -d '{
   "model": "llama2:7b",
   "prompt": "Here is an article about llamas..."
+}'
+
+//hit as chat interface
+curl http://localhost:11434/api/chat -d '{
+  "model": "llama3.2",
+  "messages": [
+    { "role": "user", "content": "why is the sky blue?" }
+  ]
 }'
 ```
 
