@@ -177,7 +177,17 @@ curl http://localhost:11434/api/embeddings -d '{
 
 Step 6: Run Ollama with LangChain
 
+> Ollama has been seamlessly integrated into the Langchain framework, streamlining our coding efforts and making our work on the technical side even more straightforward:
 
+➡️ https://python.langchain.com/docs/integrations/llms/ollama
+
+```
+# pip install langchain_community
+from langchain_community.embeddings import OllamaEmbeddings
+
+embed = OllamaEmbeddings(model="llama2:7b")
+embedding = embed.embed_query("Hello Ollama!")
+```
 
 Step 7: run Ollama with Springboot
 
