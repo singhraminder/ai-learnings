@@ -5,7 +5,7 @@ References:
 * Ollama Offical GitHub page - [https://github.com/ollama/ollama](https://github.com/ollama/ollama)
 * Ollama Tutorial: Running LLMs Locally Made Super Simple - [https://www.kdnuggets.com/ollama-tutorial-running-llms-locally-made-super-simple](https://www.kdnuggets.com/ollama-tutorial-running-llms-locally-made-super-simple)
 * 10 points for running-models-with-ollama-step-by-step [running-models-with-ollama-step-by-step](https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807#:~:text=1.%20What%20is%20Ollama?%20Ollama%20is%20an%20open-souce%20code,%20ready-to-use)
-* Custom-llm-models-with-ollama-modelfile [https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile](https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile)
+
 * How to run Ollama on Windows [https://medium.com/@researchgraph/how-to-run-ollama-on-windows-8a1622525ada#:~:text=What%20to%20Expect.%20This%20article%20will%20guide%20you%20through%20the](https://medium.com/@researchgraph/how-to-run-ollama-on-windows-8a1622525ada#:~:text=What%20to%20Expect.%20This%20article%20will%20guide%20you%20through%20the)
 
 Pre-requisitie or important points to understand:
@@ -145,14 +145,13 @@ C:\work.0\ollama-setup>
 ```
 Step 3: Manual download a model and configure to run
 
+* Custom-llm-models-with-ollama-modelfile [https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile](https://www.gpu-mart.com/blog/custom-llm-models-with-ollama-modelfile)
 * Refer This article : [https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807](https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807) > section 7. Integrating models from other sources
 
 * Download a model file *.gguf
 * Create a modelfile with customization params for model like temprature and sys/user prompt
 
 Step 4: Customize the Models
-
-
 
 ** Integrate with different frameworks
 > Ollama running in background is accessible as any regular REST API. Therefore it is easy to integrate it withing an application using libraries like requests, or a bit more developed frameworks like FastAPI, Flask or Django.
