@@ -262,11 +262,24 @@ llm.invoke("tell me about partial functions in python")
 ```
 
 Step 7: run Ollama with Springboot
+* https://www.baeldung.com/spring-ai-ollama-chatgpt-like-chatbot
+* https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html
+* https://howtodoinjava.com/spring-ai/spring-ai-ollama-example
+* https://medium.com/@pen.darkknight/building-a-conversational-ai-chatbot-with-ollama-spring-boot-and-angular-163011232461
+* https://blog.devops.dev/building-generative-ai-with-spring-boot-ai-and-integrating-ollama-llama3-af21e0cd756d
 
+  
+Step 8: Simple HTML UI for Ollama
+* https://github.com/ollama-ui/ollama-ui
 
 <h3>Other articles to Read</h3>
 
 * Local Code AI Assistant setup [https://ollama.com/blog/continue-code-assistant](https://ollama.com/blog/continue-code-assistant)
-
-* you can move them anywhere you like, via the OLLAMA_MODELS environment variable.
-Docs: https://github.com/ollama/ollama/blob/main/docs/faq.md#where-are-models-stored
+* you can move them anywhere you like, via the OLLAMA_MODELS environment variable: Docs: https://github.com/ollama/ollama/blob/main/docs/faq.md#where-are-models-stored
+* https://www.kdnuggets.com/5-llm-tools-i-cant-live-without
+* https://machinelearningmastery.com/building-3-fun-ai-applications-with-controlflow/
+* https://www.kdnuggets.com/tag/language-models
+* https://www.kdnuggets.com/voicechat-with-your-llms-using-alwaysreddy
+* https://www.kubelynx.com/article/k8sgpt-troubleshoot-debug-kubernetes-cluster-with-openai-ollama
+* https://medium.com/@yuxiaojian/host-your-own-ollama-service-in-a-cloud-kubernetes-k8s-cluster-c818ca84a055
+* https://medium.com/@logesh45/unleash-the-power-of-llama-3-2-locally-with-ollama-and-continue-0749debbad3b
