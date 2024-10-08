@@ -145,6 +145,10 @@ C:\work.0\ollama-setup>
 ```
 Step 3: Manual download a model and configure to run
 
+* Refer This article : [https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807](https://medium.com/@gabrielrodewald/running-models-with-ollama-step-by-step-60b6f6125807) > section 7. Integrating models from other sources
+
+* Download a model file *.gguf
+* Create a modelfile with customization params for model like temprature and sys/user prompt
 
 Step 4: Customize the Models
 
