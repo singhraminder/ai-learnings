@@ -153,9 +153,27 @@ Step 3: Manual download a model and configure to run
 Step 4: Customize the Models
 
 
+
+** Integrate with different frameworks
+> Ollama running in background is accessible as any regular REST API. Therefore it is easy to integrate it withing an application using libraries like requests, or a bit more developed frameworks like FastAPI, Flask or Django.
+
 Step 5: Run Ollama with Python
 
+Easy pip install for Ollama python package from ➡️ https://pypi.org/project/ollama/0.1.3:
+```
+//install via pip
+pip install ollama
 
+//Generating embedding directly from Python code
+import ollama
+embedding = ollama.embeddings(model="llama2:7b", prompt="Hello Ollama!")
+
+//hit via CURL
+curl http://localhost:11434/api/embeddings -d '{
+  "model": "llama2:7b",
+  "prompt": "Here is an article about llamas..."
+}'
+```
 
 Step 6: Run Ollama with LangChain
 
